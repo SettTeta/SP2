@@ -80,7 +80,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -92,11 +92,11 @@ function Home() {
             <div className="modal-body">
               <form>
                 <div className="form-group">
-                  <label for="recipient-name" className="col-form-label">URL Link of Video</label>
+                  <label htmlFor="recipient-name" className="col-form-label">URL Link of Video</label>
                   <input type="text" className="form-control" id="urlName" />
                 </div>
                 <div className="form-group">
-                  <label for="message-text" className="col-form-label">Description</label>
+                  <label htmlFor="message-text" className="col-form-label">Description</label>
                   <textarea className="form-control" id="videoDesc"></textarea>
                 </div>
               </form>
