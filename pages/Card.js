@@ -6,7 +6,7 @@ function CardTemplate(props) {
     return (
         <div className="col-md-4">
             <div className="card mb-4 box-shadow">
-                <iframe width="420" height="315"
+                <iframe height="315" flex-grow="1" border="none" margin="0" padding="0"
                     src={link} allowFullScreen>
                 </iframe>
                 <div className="card-body">
