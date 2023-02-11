@@ -25,11 +25,9 @@ function Home() {
         link={linkVideoIndex.link}
         desc={linkVideoIndex.desc}
         onDelete={() => deleteVideo(i)} />)
-
-
     }
     setVideoCards(videos)
-  }, [linksLocalStorage]);
+  }, [linksLocalStorage, deleteVideo]);
 
 
   function addNewVideo(links, descs) {
@@ -60,9 +58,9 @@ function Home() {
 
       <section className="jumbotron text-center">
         <div className="container">
-          <h1 className="jumbotron-heading">Album example</h1>
+          <h1 className="jumbotron-heading">VR Videos just for you</h1>
           <p className="lead text-muted">
-            Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.
+            Browse our collection of VR videos and view them with your full entertainment
           </p>
           <p>
             <a href="#" className="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Video</a>
