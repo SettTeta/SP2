@@ -2,6 +2,7 @@ import Header from 'components/header'
 import Footer from 'components/footer'
 import * as React from 'react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 function HomePage() {
     return (
@@ -19,7 +20,7 @@ function HomePage() {
                         <div className="text-white">
                             <h1 className="mb-3">Welcome to</h1>
                             <h4 className="mb-3">Our VR Hosting Platform</h4>
-                            <a className="btn btn-outline-light btn-lg" href="/browse" role="button">Click here to start</a>
+                            <Link className="btn btn-outline-light btn-lg" href="/browse" role="button">Click here to start</Link>
                         </div>
                     </div>
                 </div>
