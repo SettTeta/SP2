@@ -10,6 +10,7 @@ function App({ Component, pageProps }) {
     require("bootstrap/dist/js/bootstrap.bundle.min.js")
   }, [])
 
+
   return (
     <SSRProvider>
       <Component {...pageProps} />

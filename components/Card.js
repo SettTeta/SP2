@@ -8,7 +8,7 @@ function CardTemplate(props) {
                 <div className="card-header bg-light">
                     <p>Title</p>
                 </div>
-                <iframe height="315" flex-grow="1" border="none" margin="0" padding="0"
+                <iframe height="300" flex-grow="1" border="none" margin="0" padding="0"
                     src={link} allowFullScreen>
                 </iframe>
                 <div className="card-body">
