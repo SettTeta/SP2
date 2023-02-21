@@ -3,46 +3,64 @@ import Footer from 'components/footer'
 import * as React from 'react'
 import VideoCard from 'components/Card.js'
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
-import { useLocalStorage } from 'react-use'
+import { useRouter } from 'next/router'
 
-const linkArray = require('data/data.json')
 
 
 
 function BrowsePage() {
 
-  let [linksLocalStorage, setLinksLocalStorage] = useLocalStorage("link", linkArray)
-  let [videoCards, setVideoCards] = useState([]);
+  const router = useRouter()
+  const params = new URLSearchParams(router.asPath.split(/\?/)[1])
+  console.log(params.get("a"))
+
+  const apiUrl = 'https://sp-2-eta.vercel.app/api/sp2/videos'
+
+  const [videos, setVideos] = React.useState([])
+  const [videoList, setVideoList] = React.useState([])
+  const [loading, setLoading] = React.useState(true)
+
+  // const deleteBlog = (id) => {
+  //     if (window.confirm("Are you sure?")) {
+  //         fetch(apiUrl + '/' + id, {
+  //             method: 'DELETE'
+  //         })
+  //             .then(res => res.json())
+  //             .then(doc => {
+  //                 console.log("Deleted", doc)
+  //                 getVideos()
+  //             })
+  //     }
+  // }
+
+  const getVideos = () => {
+    fetch(apiUrl)
+      .then(res => res.json())
+      .then((data) => {
+        console.table(data)
+        setVideos(data)
+        setLoading(false)
+        setVideoList(data.map((video, index) => {
+          return (
+            <VideoCard
+              key={video.id}
+              link={video.link}
+              desc={video.desc}
+              onDelete={() => deleteVideo(i)} />
+
+          )
 
 
-  useEffect(() => {
-    let videos = [];
-    for (let i = 0; i < linksLocalStorage.length; i++) {
-      let linkVideoIndex = linksLocalStorage[i];
-      videos.push(<VideoCard
-        key={i}
-        link={linkVideoIndex.link}
-        desc={linkVideoIndex.desc}
-        onDelete={() => deleteVideo(i)} />)
-    }
-    setVideoCards(videos)
-  }, [linksLocalStorage, deleteVideo]);
-
-
-  function addNewVideo(links, descs) {
-    const newLinksLocalStorage = [...linksLocalStorage, { link: links, desc: descs }];
-    setLinksLocalStorage(newLinksLocalStorage);
-    videoCards.push(<VideoCard key={linksLocalStorage.length} link={links} desc={descs} />);
-    setVideoCards(videoCards);
+        }))
+      }).catch((err) => {
+        console.error(err)
+      })
   }
 
-  function deleteVideo(index) {
-    let newLinksLocalStorage = linksLocalStorage.filter((_, i) => i !== index);
-    setLinksLocalStorage(newLinksLocalStorage);
-    let newVideoCards = videoCards.filter((_, i) => i !== index);
-    setVideoCards(newVideoCards);
-  }
+  React.useState(() => {
+    getVideos()
+  }, [])
+
 
   return (
     <main role="main">
@@ -73,7 +91,7 @@ function BrowsePage() {
       <div className="album py-5 bg-light">
         <div className="container">
           <div className="row">
-            {videoCards}
+            {videoList}
           </div>
         </div>
       </div>
