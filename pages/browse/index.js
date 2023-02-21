@@ -20,18 +20,18 @@ function BrowsePage() {
   const [videoList, setVideoList] = React.useState([])
   const [loading, setLoading] = React.useState(true)
 
-  // const deleteBlog = (id) => {
-  //     if (window.confirm("Are you sure?")) {
-  //         fetch(apiUrl + '/' + id, {
-  //             method: 'DELETE'
-  //         })
-  //             .then(res => res.json())
-  //             .then(doc => {
-  //                 console.log("Deleted", doc)
-  //                 getVideos()
-  //             })
-  //     }
-  // }
+  const deleteVideo = (id) => {
+      if (window.confirm("Are you sure?")) {
+          fetch(apiUrl + '/' + id, {
+              method: 'DELETE'
+          })
+              .then(res => res.json())
+              .then(doc => {
+                  console.log("Deleted", doc)
+                  getVideos()
+              })
+      }
+  }
 
   const getVideos = () => {
     fetch(apiUrl)
@@ -43,10 +43,10 @@ function BrowsePage() {
         setVideoList(data.map((video, index) => {
           return (
             <VideoCard
-              key={video.id}
+              key={video._id}
               link={video.link}
               desc={video.desc}
-              onDelete={() => deleteVideo(i)} />
+              onDelete={() => deleteVideo(video._id)} />
 
           )
 
