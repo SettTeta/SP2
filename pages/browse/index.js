@@ -26,18 +26,18 @@ function BrowsePage() {
       fetch(apiUrl + '/' + id, {
         method: 'DELETE'
       })
-      .then(res => {
-        console.log(res); // Add this line
-        console.log(typeof(res));
-        return res.json();
-      })
-      .then(doc => {
-        console.log("Deleted", doc);
-        getVideos();
-      })
-      .catch(error => {
-        console.error(error);
-      });
+        .then(res => {
+          console.log(res); // Add this line
+          console.log(typeof (res));
+          return res.json();
+        })
+        .then(doc => {
+          console.log("Deleted", doc);
+          getVideos();
+        })
+        .catch(error => {
+          console.error(error);
+        });
     }
   }
 
@@ -103,6 +103,19 @@ function BrowsePage() {
           </div>
         </div>
       </div>
+
+      <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
+        <iframe
+          src="https://player.stornaway.io/embed/dd20538e"
+          frameBorder="10"
+          allowFullScreen
+          allow="accelerometer; gyroscope;autoplay;"
+          style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
+        ></iframe>
+        <script src="https://studio.stornaway.io/embed/v1/player.js" defer></script>
+      </div>
+
+
 
       <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
