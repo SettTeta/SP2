@@ -14,23 +14,31 @@ function BrowsePage() {
   const params = new URLSearchParams(router.asPath.split(/\?/)[1])
   console.log(params.get("a"))
 
-  const apiUrl = 'https://sp-2-eta.vercel.app/api/sp2/videos'
+  const apiUrl = 'http://localhost:3000/api/sp2/videos'
 
   const [videos, setVideos] = React.useState([])
   const [videoList, setVideoList] = React.useState([])
   const [loading, setLoading] = React.useState(true)
 
   const deleteVideo = (id) => {
-      if (window.confirm("Are you sure?")) {
-          fetch(apiUrl + '/' + id, {
-              method: 'DELETE'
-          })
-              .then(res => res.json())
-              .then(doc => {
-                  console.log("Deleted", doc)
-                  getVideos()
-              })
-      }
+    console.log(id)
+    if (window.confirm("Are you sure?")) {
+      fetch(apiUrl + '/' + id, {
+        method: 'DELETE'
+      })
+      .then(res => {
+        console.log(res); // Add this line
+        console.log(typeof(res));
+        return res.json();
+      })
+      .then(doc => {
+        console.log("Deleted", doc);
+        getVideos();
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
   }
 
   const getVideos = () => {
@@ -89,7 +97,7 @@ function BrowsePage() {
       </section>
 
       <div className="album py-5 bg-light">
-        <div className="container">
+        <div className="container-fluid content-row">
           <div className="row">
             {videoList}
           </div>
