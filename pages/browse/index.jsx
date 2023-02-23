@@ -4,13 +4,15 @@ import * as React from 'react'
 import VideoCard from 'components/Card.js'
 import Head from 'next/head'
 
+//  const url = "https://sp-2-eta.vercel.app"
+const url = "http://localhost:3000"
 
 export default function BrowsePage({videos}) {
 
 
   function deleteVideo(id) {
-    if (window.confirm("Are you sure you want to delete this video")){
-    fetch(`https://sp-2-eta.vercel.app/api/browse/videos/${id}`,
+    if (window.confirm("Are you sure you want to delete")){
+    fetch(`${url}/api/browse/videos/${id}`,
       {
         method: 'DELETE'
       })
@@ -23,7 +25,7 @@ export default function BrowsePage({videos}) {
   }
 
   function addNewVideo(link, desc) {
-    fetch(`https://sp-2-eta.vercel.app/api/browse/videos/`, {
+    fetch(`${url}/api/browse/videos/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -135,7 +137,7 @@ export default function BrowsePage({videos}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`https://sp-2-eta.vercel.app/api/browse/videos/`)
+  const res = await fetch(`${url}/api/browse/videos/`)
   const videos = await res.json()
   // console.debug('blog 1', blogs)
   return { props: { videos } }
