@@ -3,24 +3,48 @@ import Footer from 'components/footer'
 import * as React from 'react'
 import VideoCard from 'components/Card.js'
 import Head from 'next/head'
+import { useState } from "react";
 
- const url = "https://sp-2-eta.vercel.app"
-// const url = "http://localhost:3000"
 
-export default function BrowsePage({videos}) {
+//  const url = "https://sp-2-eta.vercel.app"
+const url = "http://localhost:3000"
 
+export default function BrowsePage({ videos }) {
+
+  const [videosToShow, setVideosToShow] = useState(6);
+
+  function loadMoreVideos() {
+    setVideosToShow(videosToShow + 3);
+  }
+
+  function renderVideoCard(video) {
+    return (
+      <VideoCard
+        key={video._id}
+        link={video.link}
+        desc={video.desc}
+        onView={video._id}
+        onDelete={() => deleteVideo(video._id)}
+      />
+    );
+  }
+
+  function renderVideoCards() {
+    const videosToDisplay = videos.slice(0, videosToShow);
+    return videosToDisplay.map(renderVideoCard);
+  }
 
   function deleteVideo(id) {
-    if (window.confirm("Are you sure you want to delete")){
-    fetch(`${url}/api/browse/videos/${id}`,
-      {
-        method: 'DELETE'
-      })
-      .then(res => res.json())
-      .then(data => {
-        alert("Deleting " + id)
-        window.location.reload(false);
-      })
+    if (window.confirm("Are you sure you want to delete")) {
+      fetch(`${url}/api/browse/videos/${id}`,
+        {
+          method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+          alert("Deleting " + id)
+          window.location.reload(false);
+        })
     }
   }
 
@@ -70,33 +94,13 @@ export default function BrowsePage({videos}) {
       <div className="album py-5 bg-light">
         <div className="container-xxl content-row">
           <div className="row">
-            {
-              videos.map(video => {
-                return (
-                  <VideoCard
-                    key={video._id}
-                    link={video.link}
-                    desc={video.desc}
-                    onView={video._id}
-                    onDelete={() => deleteVideo(video._id)} />)
-              })
-            }
+            {renderVideoCards()}
+            {videosToShow < videos.length && (
+              <button className="btn btn-secondary" onClick={loadMoreVideos}>Load more</button>
+            )}
           </div>
         </div>
       </div>
-
-      <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-        <iframe
-          src="https://player.stornaway.io/embed/dd20538e"
-          frameBorder="10"
-          allowFullScreen
-          allow="accelerometer; gyroscope;autoplay;"
-          style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}
-        ></iframe>
-        <script src="https://studio.stornaway.io/embed/v1/player.js" defer></script>
-      </div>
-
-
 
       <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">

@@ -5,8 +5,8 @@ import Header from 'components/header'
 import Footer from 'components/footer'
 
 
- const url = "https://sp-2-eta.vercel.app"
-// const url = "http://localhost:3000"
+//  const url = "https://sp-2-eta.vercel.app"
+const url = "http://localhost:3000"
 
 // Step 2: This component is rendered from the server (Server-Side Rendering) SSR
 export default function Video({ video }) {
@@ -47,6 +47,8 @@ export default function Video({ video }) {
                 </div>
             </div>
             <Link href="/browse">Back</Link>
+
+            <Footer />
         </>
     )
 }
