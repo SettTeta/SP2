@@ -4,8 +4,8 @@ import * as React from 'react'
 import VideoCard from 'components/Card.js'
 import Head from 'next/head'
 
-//  const url = "https://sp-2-eta.vercel.app"
-const url = "http://localhost:3000"
+ const url = "https://sp-2-eta.vercel.app"
+// const url = "http://localhost:3000"
 
 export default function BrowsePage({videos}) {
 
