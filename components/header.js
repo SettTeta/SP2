@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const Header = () => {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{paddingLeft: '30px'}}>
                 <a className="navbar-brand" href="#">VR Tours</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -20,16 +20,6 @@ const Header = () => {
                         <li className="nav-item">
                             <a className="nav-link" href="#">About</a>
                         </li>
-                    </ul>
-                    <ul className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a className="dropdown-item" href="#">Action</a>
-                            <a className="dropdown-item" href="#">Another action</a>
-                            <a className="dropdown-item" href="#">Something else here</a>
-                        </div>
                     </ul>
                 </div>
                 <form className="form-inline">
