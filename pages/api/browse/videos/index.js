@@ -21,6 +21,7 @@ const videoSchema = new Schema({
     title: String,
     link: String,
     desc: String,
+    type: Boolean,
 });
 
 console.log("Mongoose Models", models)

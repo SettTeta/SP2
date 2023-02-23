@@ -6,12 +6,14 @@ import Head from 'next/head'
 import { useState } from "react";
 
 
-//  const url = "https://sp-2-eta.vercel.app"
-const url = "http://localhost:3000"
+ const url = "https://sp-2-eta.vercel.app"
+// const url = "http://localhost:3000"
 
 export default function BrowsePage({ videos }) {
 
   const [videosToShow, setVideosToShow] = useState(6);
+  const [showOnlyTrue, setShowOnlyTrue] = useState(false);
+
 
   function loadMoreVideos() {
     setVideosToShow(videosToShow + 3);
@@ -30,10 +32,34 @@ export default function BrowsePage({ videos }) {
     );
   }
 
+
+
   function renderVideoCards() {
-    const videosToDisplay = videos.slice(0, videosToShow);
+    const videosToDisplay = videos
+      .filter(video => {
+        if (showOnlyTrue) {
+          return video.type === true;
+        } else {
+          return video.type === false;
+        }
+      })
+      .slice(0, videosToShow);
     return videosToDisplay.map(renderVideoCard);
   }
+
+  function handleShowAllClick() {
+    setShowOnlyTrue(false);
+  }
+
+
+  function handleShowOnlyTrueClick() {
+    setShowOnlyTrue(true);
+  }
+
+  function handleShowAllClick() {
+    setShowOnlyTrue(false);
+  }
+
 
 
   return (
@@ -56,8 +82,8 @@ export default function BrowsePage({ videos }) {
             Browse our collection of VR videos and view them with your full entertainment
           </p>
           <p>
-            <a href="#" className="btn btn-primary my-2">Add Video</a>
-            <a href="#" className="btn btn-secondary my-2">Secondary action</a>
+            <a href="#" className="btn btn-primary my-2" onClick={handleShowOnlyTrueClick}>Interactive Tour</a>
+            <a href="#" className="btn btn-secondary my-2" onClick={handleShowAllClick}>360 Virtual Tour</a>
           </p>
         </div>
       </section>

@@ -5,8 +5,8 @@ import Header from 'components/header'
 import Footer from 'components/footer'
 
 
-//  const url = "https://sp-2-eta.vercel.app"
-const url = "http://localhost:3000"
+ const url = "https://sp-2-eta.vercel.app"
+// const url = "http://localhost:3000"
 
 // Step 2: This component is rendered from the server (Server-Side Rendering) SSR
 export default function Video({ video }) {
@@ -26,16 +26,14 @@ export default function Video({ video }) {
 
             <Header />
 
-            <section className="jumbotron text-center">
+            <section className="jumbotron">
                 <div className="container">
                     <br></br>
-                    <h1 className="jumbotron-heading"><Link href={video.link}>{video.link}</Link></h1>
+                    <h1 className="jumbotron-heading"><u>{video.title}</u></h1>
                     <p className="lead text-muted">
                         {video.desc}
-                    </p>
-                    <p>
-                        <a href="#" className="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Video</a>
-                        <a href="#" className="btn btn-secondary my-2">Secondary action</a>
+                        <br></br>
+                        Link to Video: <Link href={video.link}>{video.link}</Link>
                     </p>
                 </div>
             </section>
