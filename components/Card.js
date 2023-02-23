@@ -1,7 +1,7 @@
 import * as React from "react"
 
 function CardTemplate(props) {
-    const { title, link, desc, onView, onDelete } = props
+    const { title, link, desc, onView } = props
     return (
         <div className="col-md-4">
             <div className="card mb-4 box-shadow">
@@ -16,7 +16,6 @@ function CardTemplate(props) {
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="btn-group">
                             <a type="button" className="btn btn-sm btn-outline-secondary" href={`/browse/${onView}`}>View</a>
-                            <button type="button" className="btn btn-sm btn-outline-secondary" onClick={onDelete}>Del</button>
                         </div>
                         <small className="text-muted">9 mins</small>
                     </div>

@@ -9,12 +9,8 @@ export default async function handler(req, res) {
     if (req.method === 'GET') {
         const docs = await Video.find()
         res.status(200).json(docs)
-    } else if (req.method === 'POST') {
-        console.log(req.body)
-        const doc = await Video.create(req.body)
-        res.status(201).json(doc)
-    } else {
-        res.setHeader('Allow', ['GET', 'POST'])
+    }  else {
+        res.setHeader('Allow', ['GET'])
         res.status(405).end(`Method ${req.method} Not Allowed`)
     }
 }
