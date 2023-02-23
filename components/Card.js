@@ -1,12 +1,12 @@
 import * as React from "react"
 
 function CardTemplate(props) {
-    const { link, desc, onView, onDelete } = props
+    const { title, link, desc, onView, onDelete } = props
     return (
         <div className="col-md-4">
             <div className="card mb-4 box-shadow">
                 <div className="card-header bg-light">
-                    <p>Title</p>
+                    <p>{title}</p>
                 </div>
                 <iframe height="235" flex-grow="1" border="none" margin="0" padding="0"
                     src={link} allowFullScreen>

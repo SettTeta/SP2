@@ -22,6 +22,7 @@ export default async function handler(req, res) {
 
 
 const videoSchema = new Schema({
+    title: String,
     link: String,
     desc: String,
 });

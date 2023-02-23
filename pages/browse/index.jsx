@@ -21,6 +21,7 @@ export default function BrowsePage({ videos }) {
     return (
       <VideoCard
         key={video._id}
+        title={video.title}
         link={video.link}
         desc={video.desc}
         onView={video._id}
@@ -42,23 +43,24 @@ export default function BrowsePage({ videos }) {
         })
         .then(res => res.json())
         .then(data => {
-          alert("Deleting " + id)
           window.location.reload(false);
         })
     }
   }
 
-  function addNewVideo(link, desc) {
+  function addNewVideo() {
+    const title = document.getElementById("title").value;
+    const link = document.getElementById("link").value;
+    const desc = document.getElementById("desc").value;
+  
     fetch(`${url}/api/browse/videos/`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ link, desc }),
+      headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify({ title, link, desc }) 
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then((data) => {     
+        console.log("addNewVideo", data);
         window.location.reload(false);
       })
       .catch((error) => console.error(error));
@@ -114,21 +116,24 @@ export default function BrowsePage({ videos }) {
             <div className="modal-body">
               <form>
                 <div className="form-group">
+                  <label htmlFor="title" className="col-form-label">Title of Video</label>
+                  <input type="text" className="form-control" id="title" />
+                </div>
+                <div className="form-group">
                   <label htmlFor="recipient-name" className="col-form-label">URL Link of Video</label>
-                  <input type="text" className="form-control" id="urlName" />
+                  <input type="text" className="form-control" id="link" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="message-text" className="col-form-label">Description</label>
-                  <textarea className="form-control" id="videoDesc"></textarea>
+                  <textarea className="form-control" id="desc"></textarea>
                 </div>
               </form>
             </div>
+
             <div className="modal-footer">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
               <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={() => {
-                let urlName = document.getElementById("urlName").value;
-                let videoDesc = document.getElementById("videoDesc").value;
-                addNewVideo(urlName, videoDesc);
+                addNewVideo();
               }}>Save changes</button>
             </div>
           </div>
@@ -143,7 +148,6 @@ export default function BrowsePage({ videos }) {
 export async function getServerSideProps() {
   const res = await fetch(`${url}/api/browse/videos/`)
   const videos = await res.json()
-  // console.debug('blog 1', blogs)
   return { props: { videos } }
 }
 

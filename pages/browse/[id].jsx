@@ -21,7 +21,7 @@ export default function Video({ video }) {
     return (
         <>
             <Head>
-                <title>{video.desc}</title>
+                <title>{video.title}</title>
             </Head>
 
             <Header />

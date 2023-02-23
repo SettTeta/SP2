@@ -1,6 +1,7 @@
 import { connect, model, models, Schema } from "mongoose"
 const connectionString = 'mongodb+srv://user1:2bhEHe22GdtH1idX@cluster0.t27tcax.mongodb.net/sp2'
 
+
 export default async function handler(req, res) {
     await connect(connectionString);
     console.log("req.method: ", req.method)
@@ -29,6 +30,7 @@ export default async function handler(req, res) {
 
 
 const videoSchema = new Schema({
+    title: String,
     link: String,
     desc: String,
 });
