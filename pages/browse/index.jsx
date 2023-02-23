@@ -10,7 +10,7 @@ export default function BrowsePage({videos}) {
 
   function deleteVideo(id) {
     if (window.confirm("Are you sure you want to delete")){
-    fetch(`http://localhost:3000/api/browse/videos/${id}`,
+    fetch(`https://sp-2-eta.vercel.app/api/browse/videos/${id}`,
       {
         method: 'DELETE'
       })
@@ -23,7 +23,7 @@ export default function BrowsePage({videos}) {
   }
 
   function addNewVideo(link, desc) {
-    fetch(`http://localhost:3000/api/browse/videos/`, {
+    fetch(`https://sp-2-eta.vercel.app/api/browse/videos/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
