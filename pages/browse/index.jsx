@@ -9,7 +9,7 @@ export default function BrowsePage({videos}) {
 
 
   function deleteVideo(id) {
-    if (window.confirm("Are you sure you want to delete")){
+    if (window.confirm("Are you sure you want to delete this video")){
     fetch(`https://sp-2-eta.vercel.app/api/browse/videos/${id}`,
       {
         method: 'DELETE'
