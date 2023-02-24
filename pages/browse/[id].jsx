@@ -59,7 +59,6 @@ export default function Video({ video }) {
             </div>
             <Link href="/browse">Back</Link>
 
-            <Footer />
         </>
     )
 }

@@ -100,7 +100,6 @@ export default function BrowsePage({ videos }) {
       </div>
 
 
-      <Footer />
     </main>
   )
 }
