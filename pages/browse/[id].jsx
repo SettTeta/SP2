@@ -40,14 +40,18 @@ export default function Video({ video }) {
 
             <div className="album py-5 bg-light">
                 <div className="container-xxl content-row">
+                    <row>
+                        <iframe className="vr-iframe" height="235" frameborder="0" scrolling="yes" allowvr="yes" allow="vr,gyroscope,accelerometer" flex-grow="1" border="none" margin="0" padding="0"
+                            src={video.link} allowFullScreen>
+                        </iframe>
+                    </row>
 
-                    {/* <iframe className="vr-iframe" height="235" frameborder="0" scrolling="yes" allowvr="yes" allow="vr,gyroscope,accelerometer" flex-grow="1" border="none" margin="0" padding="0"
-                        src={video.link} allowFullScreen>
-                    </iframe> */}
-
-                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                        <iframe src="https://player.stornaway.io/embed/dd20538e" frameborder="0" allowfullscreen allow="accelerometer; gyroscope;autoplay;" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;"></iframe> 
-                        <script src="https://studio.stornaway.io/embed/v1/player.js" defer></script></div>
+                    <row>
+                        <div style={{ position: 'relative', paddingBottom: '56.25%', height: '0', overflow: 'hidden' }}>
+                            <iframe className="vr-iframe" src="https://player.stornaway.io/embed/dd20538e" frameborder="0" allowvr="yes" allowfullscreen allow="vr; accelerometer; gyroscope; autoplay;"
+                                style={{ width: '100%', height: '100%', position: 'absolute', top: '0', left: '0' }}></iframe>
+                            <script src="https://studio.stornaway.io/embed/v1/player.js" defer></script></div>
+                    </row>
                 </div>
             </div>
             <Link href="/browse">Back</Link>
