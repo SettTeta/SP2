@@ -1,5 +1,6 @@
 import * as React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Link from 'next/link';
 
 const Header = () => {
     return (
@@ -14,13 +15,13 @@ const Header = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                                <Link className="nav-link active" aria-current="page" href="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/gettingStarted">Getting Started</a>
+                                <Link className="nav-link" href="/gettingStarted">Getting Started</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/browse">Browse</a>
+                                <Link className="nav-link" href="/browse">Browse</Link>
                             </li>
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
