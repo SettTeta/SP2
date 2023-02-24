@@ -7,13 +7,16 @@ import Link from 'next/link'
 function HomePage() {
     return (
         <main role="main">
+
             <div>
                 <Head>
                     <title>VR Tours - Home</title>
                     <meta name="description" content="A VR Video Hosting platform" />
                 </Head>
             </div>
+            
             <Header />
+
             <div className="p-0 text-center bg-image" style={{ backgroundImage: "url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp')", backgroundSize: "cover", height: "100vh" }}>
                 <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)", height: "100vh" }}>
                     <div className="d-flex justify-content-center align-items-center h-100">
@@ -77,7 +80,7 @@ function HomePage() {
                 </div>
             </div>
 
-            {/* <div id="carouselVideoExample" className="carousel slide carousel-fade" data-mdb-ride="carousel">
+            <div id="carouselVideoExample" className="carousel slide carousel-fade" data-mdb-ride="carousel">
                 <div className="carousel-indicators">
                     <button type="button" data-mdb-target="#carouselVideoExample" data-mdb-slide-to="0" className="active"
                         aria-current="true" aria-label="Slide 1"></button>
@@ -135,7 +138,7 @@ function HomePage() {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
-            </div> */}
+            </div>
 
             <Footer />
         </main>
