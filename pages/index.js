@@ -34,6 +34,7 @@ function HomePage() {
                                     <div className="text-white">
                                         <h1 className="mb-3">Welcome to our VR Hosting Platform</h1>
                                         <h4 className="mb-3">Here is a collection of VR Videos that are tailored to your liking</h4>
+                                        <h4 className="mb-3">Test</h4>
                                         <Link className="btn btn-outline-light btn-lg" href="/gettingStarted" role="button">Click here to get Started</Link>
                                     </div>
                                 </div>
