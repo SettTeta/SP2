@@ -40,7 +40,7 @@ export default function Video({ video }) {
 
             <div className="album py-5 bg-light">
                 <div className="container-xxl content-row">
-                <iframe height="235" frameborder="0" scrolling="yes" allowvr="yes" allow="vr,gyroscope,accelerometer" flex-grow="1" border="none" margin="0" padding="0"
+                <iframe className="vr-iframe" height="235" frameborder="0" scrolling="yes" allowvr="yes" allow="vr,gyroscope,accelerometer" flex-grow="1" border="none" margin="0" padding="0"
                     src={video.link} allowFullScreen>
                 </iframe>
                 </div>
