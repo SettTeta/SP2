@@ -96,6 +96,7 @@ function GettingStartedPage() {
                         </thead>
 
                         <tbody>
+                            
                             <tr>
                                 <td >VR Headset</td>
                                 <td>Cardboard Goggles</td>
