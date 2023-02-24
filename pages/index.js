@@ -34,7 +34,7 @@ function HomePage() {
                                     <div className="text-white">
                                         <h1 className="mb-3">Welcome to our VR Hosting Platform</h1>
                                         <h4 className="mb-3">Here is a collection of VR Videos that are tailored to your liking</h4>
-                                        <Link className="btn btn-outline-light btn-lg" href="/browse" role="button">Click here to start browsing</Link>
+                                        <Link className="btn btn-outline-light btn-lg" href="/gettingStarted" role="button">Click here to get Started</Link>
                                     </div>
                                 </div>
                             </div>
@@ -48,9 +48,9 @@ function HomePage() {
                             <div className="content p-0 text-center bg-image" style={{ height: "100vh", position: "relative", bottom: "0", background: "rgba(0, 0, 0, 0.6)", color: "#f1f1f1", width: "100%", padding: "20px" }}>
                                 <div className="d-flex justify-content-center align-items-center h-100">
                                     <div className="text-white">
-                                        <h1 className="mb-3">Getting Started</h1>
-                                        <h4 className="mb-3">The device you are going to use to view our content will determine what kind <br></br>of experience you will have</h4>
-                                        <Link className="btn btn-outline-light btn-lg" href="/gettingStarted" role="button">Go to our Recomendation</Link>
+                                        <h1 className="mb-3">Already visted Before?</h1>
+                                        <h4 className="mb-3">Then just continue on to our video collection</h4>
+                                        <Link className="btn btn-outline-light btn-lg" href="/browse" role="button">Browse</Link>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@ function HomePage() {
                                         <div className="text-white" style={{ paddingBottom: "50px" }}>
                                             <h4 className="mb-3">Here is a Teaser of What to Expect</h4>
                                         </div>
-                                        <div background>
+                                        <div>
                                             <iframe height="300" width="600"
                                                 src="https://www.youtube.com/embed/wnrHCMI1FNs" allowFullScreen>
                                             </iframe>

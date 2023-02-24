@@ -42,7 +42,7 @@ export default function Video({ video }) {
                 <div className="container-xxl content-row">
 
                     <div style={{ position: 'relative', paddingBottom: '56.25%', height: '0', overflow: 'hidden' }}>
-                        <iframe className="vr-iframe" height="235" frameborder="0" scrolling="yes" allowvr="yes" allow="vr,gyroscope,accelerometer" flex-grow="1" border="none" margin="0" padding="0"
+                        <iframe className="vr-iframe" height="235" frameBorder="0" scrolling="yes" allowvr="yes" allow="vr,gyroscope,accelerometer" flex-grow="1" border="none" margin="0" padding="0"
                             src={video.link} style={{ width: '100%', height: '100%', position: 'absolute', top: '0', left: '0' }} allowFullScreen></iframe>
                     </div>
 
