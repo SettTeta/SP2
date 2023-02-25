@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Header from 'components/header'
 
 function HomePage() {
     return (
@@ -12,6 +13,8 @@ function HomePage() {
                     <meta name="description" content="A VR Video Hosting platform" />
                 </Head>
             </div>
+
+            <Header></Header>
 
             <div className="Container">
                 <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel" >
@@ -25,16 +28,16 @@ function HomePage() {
                     <div className="carousel-inner">
 
                         <div className="carousel-item active" >
-                            <video className="img-fluid" autoPlay loop muted style={{ position: "fixed", right: "0", bottom: "0", minWidth: "100%", minHeight: "100%" }}>
+                            <video autoPlay loop muted style={{ position: "absolute", right: "0", bottom: "0", minWidth: "100%", minHeight: "100%" }}>
                                 <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
                             </video>
 
-                            <div className="content p-0 text-center bg-image" style={{ height: "100vh", position: "relative", bottom: "0", background: "rgba(0, 0, 0, 0.6)", color: "#f1f1f1", width: "100%", padding: "20px" }}>
+                            <div className="content p-0 text-center bg-image" style={{ height: "100vh", position: "relative", right: "0", bottom: "0", background: "rgba(0, 0, 0, 0.6)", color: "#f1f1f1", width: "100%" }}>
                                 <div className="d-flex justify-content-center align-items-center h-100">
                                     <div className="text-white">
                                         <h1 className="mb-3">Welcome to our VR Hosting Platform</h1>
                                         <h4 className="mb-3">Here is a collection of VR Videos that are tailored to your liking</h4>
-                                        <h4 className="mb-3">Test</h4>
+                                        <br></br>
                                         <Link className="btn btn-outline-light btn-lg" href="/gettingStarted" role="button">Click here to get Started</Link>
                                     </div>
                                 </div>
@@ -42,15 +45,16 @@ function HomePage() {
                         </div>
 
                         <div className="carousel-item">
-                            <video className="img-fluid" autoPlay loop muted style={{ position: "fixed", right: "0", bottom: "0", minWidth: "100%", minHeight: "100%" }}>
+                            <video autoPlay loop muted style={{ position: "absolute", right: "0", bottom: "0", minWidth: "100%", minHeight: "100%" }}>
                                 <source src="https://mdbcdn.b-cdn.net/img/video/forest.mp4" type="video/mp4" />
                             </video>
 
-                            <div className="content p-0 text-center bg-image" style={{ height: "100vh", position: "relative", bottom: "0", background: "rgba(0, 0, 0, 0.6)", color: "#f1f1f1", width: "100%", padding: "20px" }}>
+                            <div className="content p-0 text-center bg-image" style={{ height: "100vh", position: "relative", bottom: "0", background: "rgba(0, 0, 0, 0.6)", color: "#f1f1f1", width: "100%" }}>
                                 <div className="d-flex justify-content-center align-items-center h-100">
                                     <div className="text-white">
                                         <h1 className="mb-3">Already visted Before?</h1>
                                         <h4 className="mb-3">Then just continue on to our video collection</h4>
+                                        <br></br>
                                         <Link className="btn btn-outline-light btn-lg" href="/browse" role="button">Browse</Link>
                                     </div>
                                 </div>
@@ -58,35 +62,25 @@ function HomePage() {
                         </div>
 
                         <div className="carousel-item">
-                            <video className="img-fluid" autoPlay loop muted style={{ position: "fixed", right: "0", bottom: "0", minWidth: "100%", minHeight: "100%" }}>
+                            <video autoPlay loop muted style={{ position: "absolute", right: "0", bottom: "0", minWidth: "100%", minHeight: "100%" }}>
                                 <source src="https://mdbcdn.b-cdn.net/img/video/Agua-natural.mp4" type="video/mp4" />
                             </video>
 
-                            <div className="content p-0 text-center bg-image" style={{ height: "100vh", position: "relative", bottom: "0", background: "rgba(0, 0, 0, 0.6)", color: "#f1f1f1", width: "100%", padding: "20px" }}>
+                            <div className="content p-0 text-center bg-image" style={{ height: "100vh", position: "relative", bottom: "0", background: "rgba(0, 0, 0, 0.6)", color: "#f1f1f1", width: "100%",  paddingTop: "56.25%" }}>
                                 <div className="d-flex justify-content-center align-items-center h-100">
                                     <div className='container'>
                                         <div className="text-white" style={{ paddingBottom: "50px" }}>
                                             <h4 className="mb-3">Here is a Teaser of What to Expect</h4>
                                         </div>
-                                        <div>
-                                            <iframe height="300" width="600"
-                                                src="https://www.youtube.com/embed/wnrHCMI1FNs" allowFullScreen>
-                                            </iframe>
+                                        <div className="container" style={{ position: "relative", overflow: "hidden", width: "100%", height: "100%"}}>
+                                            <iframe className="responsive-iframe" style={{width: "100%", height: "200px"}} src="https://www.youtube.com/embed/wnrHCMI1FNs" allowFullScreen></iframe>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* <div className="carousel-item">
-                            <iframe height="600" width="1200" flex-grow="1" border="none" margin="0" padding="0"
-                                src="https://www.youtube.com/embed/wnrHCMI1FNs" allowFullScreen>
-                            </iframe>
-                            <div className="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
-                            </div>
-                        </div> */}
+
 
                     </div>
 
@@ -100,6 +94,23 @@ function HomePage() {
                     </button>
                 </div>
             </div>
+
+            {/* <div className="container">
+                <div className="content p-0 text-center bg-image">
+                    <div className="d-flex justify-content-center align-items-center h-100">
+                        <div className='container'>
+                            <div className="text-black" style={{ paddingBottom: "50px" }}>
+                                <h4 className="mb-3">Here is a Teaser of What to Expect</h4>
+                            </div>
+                            <div>
+                                <iframe width="80%"
+                                    src="https://www.youtube.com/embed/wnrHCMI1FNs" allowFullScreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
 
         </main>
     )
