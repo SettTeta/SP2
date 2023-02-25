@@ -21,6 +21,7 @@ function GettingStartedPage() {
 
             <Header />
 
+
             <section className="jumbotron text-center">
                 <div className="container">
                     <br></br>
@@ -31,89 +32,196 @@ function GettingStartedPage() {
                 </div>
             </section>
 
+
             <div className="album py-5 bg-light">
                 <div className='container'>
-                    <table className="table table-borderless" style={{ textAlign: "center", tableLayout: "fixed", verticalAlign: "center" }}>
 
-                        <thead>
-                            <tr>
-                                <td><Image
+                    <div className="card mb-3">
+                        <div className="row g-0 ">
+                            <div className="col-md-3 align-self-center ">
+                                <br></br>
+                                <Image className="rounded mx-auto d-block"
                                     src={iosIcon}
                                     alt="Picture of the author"
                                     width="130"
-                                    height="130" /></td>
-                                <td><Image
+                                    height="130" />
+                                <br></br>
+                            </div>
+                            <div className="col-md-9">
+                                <div className="card-body">
+                                    <h3 className="card-title">iOS Devies</h3>
+                                    <p className="card-text">Includes iPad's and iPhone's as well as other Apple's products except the Mac's.</p>
+                                    <p className="card-text text-decoration-underline fw-light text-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1"><small className="text-muted">See More Details</small></p>
+                                    <div className="collapse" id="collapseExample1">
+                                        <div className="card card-body">
+                                            <h5>Intro:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+
+                                            <h5>Experience:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+
+                                            <h5>Limitations:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mb-3">
+                        <div className="row g-0 ">
+                            <div className="col-md-3 align-self-center ">
+                                <br></br>
+                                <Image className="rounded mx-auto d-block"
                                     src={andIcon}
                                     alt="Picture of the author"
                                     width="130"
-                                    height="130" /></td>
-                                <td><Image
+                                    height="130" />
+                                <br></br>
+                            </div>
+                            <div className="col-md-9">
+                                <div className="card-body">
+                                    <h3 className="card-title">iOS Devies</h3>
+                                    <p className="card-text">Includes iPad's and iPhone's as well as other Apple's products except the Mac's.</p>
+                                    <p className="card-text text-decoration-underline fw-light text-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2"><small className="text-muted">See More Details</small></p>
+                                    <div className="collapse" id="collapseExample2">
+                                        <div className="card card-body">
+                                            <h5>Intro:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+
+                                            <h5>Experience:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+
+                                            <h5>Limitations:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mb-3">
+                        <div className="row g-0 ">
+                            <div className="col-md-3 align-self-center ">
+                                <br></br>
+                                <Image className="rounded mx-auto d-block"
                                     src={desktopIcon}
                                     alt="Picture of the author"
                                     width="130"
-                                    height="130" /></td>
-                            </tr>
-                        </thead>
+                                    height="130" />
+                                <br></br>
+                            </div>
+                            <div className="col-md-9">
+                                <div className="card-body">
+                                    <h3 className="card-title">iOS Devies</h3>
+                                    <p className="card-text">Includes iPad's and iPhone's as well as other Apple's products except the Mac's.</p>
+                                    <p className="card-text text-decoration-underline fw-light text-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3"><small className="text-muted">See More Details</small></p>
+                                    <div className="collapse" id="collapseExample3">
+                                        <div className="card card-body">
+                                            <h5>Intro:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
 
-                        <tbody>
-                            <tr>
-                                <td>iOS</td>
-                                <td>Android</td>
-                                <td>Computer</td>
-                            </tr>
-                        </tbody>
+                                            <h5>Experience:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
 
-                        <tfoot>
-                            <tr>
-                                <td >iPhone and iPad</td>
-                                <td>Google made Phones</td>
-                                <td>Applies to both laptops and desktops</td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                                            <h5>Limitations:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-                    <br></br>
-
-                    <table className="table table-borderless" style={{ textAlign: "center", tableLayout: "fixed", verticalAlign: "center" }}>
-                        <thead>
-                            <tr>
-                                <td><Image
+                    <div className="card mb-3">
+                        <div className="row g-0 ">
+                            <div className="col-md-3 align-self-center ">
+                                <br></br>
+                                <Image className="rounded mx-auto d-block"
                                     src={vrIcon}
                                     alt="Picture of the author"
                                     width="130"
-                                    height="130" /></td>
-                                <td><Image
+                                    height="130" />
+                                <br></br>
+                            </div>
+                            <div className="col-md-9">
+                                <div className="card-body">
+                                    <h3 className="card-title">iOS Devies</h3>
+                                    <p className="card-text">Includes iPad's and iPhone's as well as other Apple's products except the Mac's.</p>
+                                    <p className="card-text text-decoration-underline fw-light text-primary" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample4"><small className="text-muted">See More Details</small></p>
+                                    <div className="collapse" id="collapseExample4">
+                                        <div className="card card-body">
+                                            <h5>Intro:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+
+                                            <h5>Experience:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+
+                                            <h5>Limitations:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mb-3">
+                        <div className="row g-0 ">
+                            <div className="col-md-3 align-self-center ">
+                                <br></br>
+                                <Image className="rounded mx-auto d-block"
                                     src={cardIcon}
                                     alt="Picture of the author"
-                                    width="160"
-                                    height="100" /></td>
-                            </tr>
-                        </thead>
+                                    width="130"
+                                    height="90" />
+                                <br></br>
+                            </div>
+                            <div className="col-md-9">
+                                <div className="card-body">
+                                    <h3 className="card-title">iOS Devies</h3>
+                                    <p className="card-text">Includes iPad's and iPhone's as well as other Apple's products except the Mac's.</p>
+                                    <p className="card-text text-decoration-underline fw-light text-primary" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample5"><small className="text-muted">See More Details</small></p>
+                                    <div className="collapse" id="collapseExample5">
+                                        <div className="card card-body">
+                                            <h5>Intro:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
 
-                        <tbody>
-                            
-                            <tr>
-                                <td >VR Headset</td>
-                                <td>Cardboard Goggles</td>
-                            </tr>
-                        </tbody>
+                                            <h5>Experience:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
 
-                        <tfoot>
-                            <tr>
-                                <td >VR Headsets that is run by itself or requires a computer</td>
-                                <td>Make these by yourselves or buy them cheap online and slide your phone inside.</td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                                            <h5>Limitations:</h5>
+                                            <p>jasdasdkbskbdkjabs</p>
+                                            <br></br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    
 
                 </div>
             </div>
-
 
         </main>
     )
