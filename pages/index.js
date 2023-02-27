@@ -73,7 +73,7 @@ function HomePage() {
                                             <h4 className="mb-3">Here is a Teaser of What to Expect</h4>
                                         </div>
                                         <div className="container" style={{ position: "relative", overflow: "hidden", width: "100%", height: "100%"}}>
-                                            <iframe className="responsive-iframe" style={{width: "100%", height: "200px"}} src="https://www.youtube.com/embed/wnrHCMI1FNs" allowFullScreen></iframe>
+                                            <iframe width="921" height="518"  src="https://www.youtube.com/embed/wnrHCMI1FNs" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                                         </div>
                                     </div>
                                 </div>
