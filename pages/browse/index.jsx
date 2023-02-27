@@ -6,7 +6,7 @@ import { useState } from "react";
 import Link from 'next/link'
 
 
- const url = "https://sp-2-eta.vercel.app"
+const url = "https://sp-2-eta.vercel.app"
 // const url = "http://localhost:3000"
 
 export default function BrowsePage({ videos }) {
