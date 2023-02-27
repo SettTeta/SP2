@@ -4,9 +4,8 @@ import * as React from 'react'
 import Header from 'components/header'
 import Footer from 'components/footer'
 
-
-// const url = "https://sp-2-eta.vercel.app"
-const url = "http://localhost:3000"
+const url = "https://sp-2-eta.vercel.app"
+// const url = "http://localhost:3000"
 
 // Step 2: This component is rendered from the server (Server-Side Rendering) SSR
 export default function Video({ video }) {
@@ -74,11 +73,11 @@ export default function Video({ video }) {
                     </div>
 
                     <div className="card mb-3">
-                        <a href={video.link} className="btn btn-primary my-2">Go to Website</a>
+                        <Link href={video.link} className="btn btn-primary my-2">Go to Website</Link>
                     </div>
 
                     <div className="card mb-3">
-                        <a href="/browse" className="btn btn-danger my-2">Back</a>
+                        <Link href="/browse" className="btn btn-danger my-2">Back</Link>
                     </div>
 
                 </div>
