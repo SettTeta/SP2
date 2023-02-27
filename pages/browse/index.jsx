@@ -57,6 +57,12 @@ export default function BrowsePage({ videos }) {
     setShowOnlyTrue(true);
   }
 
+  if (!video) return (
+    <div>
+        <p>Videos not found</p>
+        <Link href="/browse">Back</Link>
+    </div>
+);
 
   return (
     <main role="main">
