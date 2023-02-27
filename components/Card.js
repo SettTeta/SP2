@@ -1,4 +1,5 @@
 import * as React from "react"
+import Image from "next/image"
 
 function CardTemplate(props) {
     const { title, link, desc, onView, duration, location, dOU } = props

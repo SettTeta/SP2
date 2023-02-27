@@ -4,10 +4,11 @@ import * as React from 'react'
 import VideoCard from 'components/Card.js'
 import Head from 'next/head'
 import { useState } from "react";
+import Link from 'next/link'
 
 
- const url = "https://sp-2-eta.vercel.app"
-// const url = "http://localhost:3000"
+//  const url = "https://sp-2-eta.vercel.app"
+const url = "http://localhost:3000"
 
 export default function BrowsePage({ videos }) {
 
@@ -83,10 +84,10 @@ export default function BrowsePage({ videos }) {
 
       <ul className="nav nav-tabs">
         <li className="nav-item">
-          <a className="nav-link active" onClick={handleShowAllClick}>360 VR Tour</a>
+          <Link className="nav-link active" href="" onClick={handleShowAllClick}>360 VR Tour</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" onClick={handleShowOnlyTrueClick}>Interactive Tour</a>
+          <Link className="nav-link" href="" onClick={handleShowOnlyTrueClick}>Interactive Tour</Link>
         </li>
       </ul>
       
