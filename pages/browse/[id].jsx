@@ -2,7 +2,6 @@ import Head from "next/head"
 import Link from "next/link"
 import * as React from 'react'
 import Header from 'components/header'
-import Footer from 'components/footer'
 
 const url = "https://sp-2-eta.vercel.app"
 // const url = "http://localhost:3000"
