@@ -11,7 +11,7 @@ function CardTemplate(props) {
                 </div>
 
                 <div style={{ background: "#eee" }}>
-                    <img src={link} style={{height:"100%", width:"100%", borderRadius: "1%", padding:"5px"}}></img>
+                    {/* <img src={link} style={{height:"100%", width:"100%", borderRadius: "1%", padding:"5px"}}></img> */}
                 </div>
 
                 <div className="card-body">
