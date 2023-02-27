@@ -14,7 +14,6 @@ export default function BrowsePage({ videos }) {
   const [videosToShow, setVideosToShow] = useState(6);
   const [showOnlyTrue, setShowOnlyTrue] = useState(false);
 
-
   function loadMoreVideos() {
     setVideosToShow(videosToShow + 3);
   }
@@ -24,10 +23,12 @@ export default function BrowsePage({ videos }) {
       <VideoCard
         key={video._id}
         title={video.title}
-        link={video.link}
+        link={video.thumbnail}
         desc={video.desc}
         onView={video._id}
-        onDelete={() => deleteVideo(video._id)}
+        duration={video.duration}
+        location={video.location}
+        dOU={video.dateOfUpload}
       />
     );
   }
@@ -56,15 +57,9 @@ export default function BrowsePage({ videos }) {
     setShowOnlyTrue(true);
   }
 
-  function handleShowAllClick() {
-    setShowOnlyTrue(false);
-  }
-
-
 
   return (
     <main role="main">
-
       <div>
         <Head>
           <title>VR Tours</title>
@@ -81,12 +76,21 @@ export default function BrowsePage({ videos }) {
           <p className="lead text-muted">
             Browse our collection of VR videos and view them with your full entertainment
           </p>
-          <p>
-            <a href="#" className="btn btn-primary my-2" onClick={handleShowOnlyTrueClick}>Interactive Tour</a>
-            <a href="#" className="btn btn-secondary my-2" onClick={handleShowAllClick}>360 Virtual Tour</a>
-          </p>
         </div>
       </section>
+
+      <br />
+
+      <ul className="nav nav-tabs">
+        <li className="nav-item">
+          <a className="nav-link active" onClick={handleShowAllClick}>360 VR Tour</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" onClick={handleShowOnlyTrueClick}>Interactive Tour</a>
+        </li>
+      </ul>
+      
+      {/* search bar = check search input by mapping it to the list of videos */}
 
       <div className="album py-5 bg-light">
         <div className="container-xxl content-row">
