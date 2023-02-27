@@ -28,6 +28,7 @@ const videoSchema = new Schema({
     type: Boolean,
     duration: String,
     thumbnail: String,
+    location: String,
     dateOfUpload: String,
 });
 
