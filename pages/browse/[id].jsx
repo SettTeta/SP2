@@ -3,8 +3,8 @@ import Link from "next/link"
 import * as React from 'react'
 import Header from 'components/header'
 
-const url = "https://sp-2-eta.vercel.app"
-// const url = "http://localhost:3000"
+// const url = "https://sp-2-eta.vercel.app"
+const url = "http://localhost:3000"
 
 // Step 2: This component is rendered from the server (Server-Side Rendering) SSR
 export default function Video({ video }) {

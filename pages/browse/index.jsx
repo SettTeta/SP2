@@ -1,18 +1,19 @@
 import Header from 'components/header'
+import Footer from 'components/footer'
 import * as React from 'react'
 import VideoCard from 'components/Card.js'
 import Head from 'next/head'
 import { useState } from "react";
-import Link from 'next/link'
 
 
-const url = "https://sp-2-eta.vercel.app"
-// const url = "http://localhost:3000"
+//  const url = "https://sp-2-eta.vercel.app"
+const url = "http://localhost:3000"
 
 export default function BrowsePage({ videos }) {
 
   const [videosToShow, setVideosToShow] = useState(6);
   const [showOnlyTrue, setShowOnlyTrue] = useState(false);
+
 
   function loadMoreVideos() {
     setVideosToShow(videosToShow + 3);
@@ -23,12 +24,10 @@ export default function BrowsePage({ videos }) {
       <VideoCard
         key={video._id}
         title={video.title}
-        link={video.thumbnail}
+        link={video.link}
         desc={video.desc}
         onView={video._id}
-        duration={video.duration}
-        location={video.location}
-        dOU={video.dateOfUpload}
+        onDelete={() => deleteVideo(video._id)}
       />
     );
   }
@@ -57,15 +56,15 @@ export default function BrowsePage({ videos }) {
     setShowOnlyTrue(true);
   }
 
-  if (!video) return (
-    <div>
-        <p>Videos not found</p>
-        <Link href="/browse">Back</Link>
-    </div>
-);
+  function handleShowAllClick() {
+    setShowOnlyTrue(false);
+  }
+
+
 
   return (
     <main role="main">
+
       <div>
         <Head>
           <title>VR Tours</title>
@@ -82,21 +81,12 @@ export default function BrowsePage({ videos }) {
           <p className="lead text-muted">
             Browse our collection of VR videos and view them with your full entertainment
           </p>
+          <p>
+            <a href="#" className="btn btn-primary my-2" onClick={handleShowOnlyTrueClick}>Interactive Tour</a>
+            <a href="#" className="btn btn-secondary my-2" onClick={handleShowAllClick}>360 Virtual Tour</a>
+          </p>
         </div>
       </section>
-
-      <br />
-
-      <ul className="nav nav-tabs">
-        <li className="nav-item">
-          <Link className="nav-link active" href="" onClick={handleShowAllClick}>360 VR Tour</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" href="" onClick={handleShowOnlyTrueClick}>Interactive Tour</Link>
-        </li>
-      </ul>
-      
-      {/* search bar = check search input by mapping it to the list of videos */}
 
       <div className="album py-5 bg-light">
         <div className="container-xxl content-row">
