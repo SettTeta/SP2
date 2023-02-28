@@ -118,7 +118,7 @@ export default function BrowsePage({ videos }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${url}/api/browse/videos/`)
+  const res = await fetch(`https://sp-2-eta.vercel.app/api/browse/videos/`)
   const videos = await res.json()
   return { props: { videos } }
 }
