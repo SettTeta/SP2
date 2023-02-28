@@ -6,8 +6,8 @@ import Head from 'next/head'
 import { useState } from "react";
 
 
- const url = "https://sp-2-eta.vercel.app"
-// const url = "http://localhost:3000"
+//  const url = "https://sp-2-eta.vercel.app"
+const url = "http://localhost:3000"
 
 export default function BrowsePage({ videos }) {
 
