@@ -5,9 +5,9 @@ import Head from 'next/head'
 import { useState } from "react";
 import Link from 'next/link'
 
-
+const url = process.env.API_URL;
 // const url = "https://sp-2-eta.vercel.app"
-const url = "http://localhost:3000"
+// const url = "http://localhost:3000"
 
 export default function BrowsePage({ videos }) {
 
