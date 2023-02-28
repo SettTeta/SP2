@@ -18,6 +18,9 @@ export default function BrowsePage({ videos }) {
     setVideosToShow(videosToShow + 3);
   }
 
+  console.log("url",url)
+
+
   function renderVideoCard(video) {
     return (
       <VideoCard
